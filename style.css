@@ -165,26 +165,16 @@ section{padding:84px 0}
 .card h3{font-size:17px;margin-bottom:9px}
 .card p{font-size:14px;color:var(--muted);line-height:1.6}
 
-/* ---------- Quote panel ---------- */
-.quote-panel{
-  position:relative;overflow:hidden;border-radius:26px;
-  min-height:380px;display:flex;align-items:flex-end;
-  padding:52px;color:#fff;
-}
-.quote-panel img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
-}
-.quote-panel::after{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:linear-gradient(0deg, rgba(35,20,12,.88) 5%, rgba(35,20,12,.45) 55%, rgba(35,20,12,.15) 100%);
-}
-.quote-panel .quote-content{position:relative;z-index:2;max-width:600px}
-.quote-panel blockquote{
-  font-size:clamp(20px,2.8vw,28px);font-weight:700;line-height:1.4;
-}
-.quote-panel .signee{
-  margin-top:18px;color:rgba(255,255,255,.75);font-size:14px;font-weight:600;
-}
+/* ---------- Press-style image/tekst-grid ---------- */
+.press-section{border-top:1px solid var(--border)}
+.press-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.press-text{display:flex;flex-direction:column;justify-content:center;padding:60px 64px}
+.press-text blockquote{font-size:clamp(20px,2.4vw,26px);font-weight:700;line-height:1.4;color:var(--ink)}
+.press-text .signee{margin-top:16px;color:var(--muted);font-size:14px;font-weight:600}
+.press-text h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+.press-text p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:26px;max-width:420px}
+.press-text .cta-row{margin:0}
+.press-media img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block}
 
 /* ---------- Contact block ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -306,7 +296,9 @@ footer{background:var(--terra-deep);color:rgba(255,255,255,.85);padding:60px 0 2
   section{padding:56px 0}
   .hero{padding:90px 0 60px}
   .hero-bg::after{background:linear-gradient(180deg, rgba(28,18,12,.55) 0%, rgba(28,18,12,.72) 55%, rgba(28,18,12,.92) 100%)}
-  .quote-panel{padding:32px 22px}
+  .press-row{grid-template-columns:1fr}
+  .press-text{padding:36px 22px}
+  .press-media img{min-height:240px}
   .form-card{padding:26px 20px}
 }
 @media (max-width:420px){
