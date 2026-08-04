@@ -95,14 +95,14 @@ nav.main-nav a:hover, nav.main-nav a.active{color:var(--terra)}
 .overlay.open{opacity:1;pointer-events:auto}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;padding:64px 0 88px;overflow:hidden}
-.hero-decor{
-  position:absolute;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle, rgba(193,89,46,.10), transparent 70%);
+.hero{position:relative;padding:150px 0 120px;overflow:hidden;color:#fff}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg, rgba(28,18,12,.9) 0%, rgba(28,18,12,.68) 40%, rgba(28,18,12,.28) 72%, rgba(28,18,12,.15) 100%);
 }
-.hero-decor.d1{width:520px;height:520px;top:-160px;right:-140px}
-.hero-decor.d2{width:280px;height:280px;bottom:-100px;left:-80px;background:radial-gradient(circle, rgba(107,96,88,.08), transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
+.hero-content{position:relative;z-index:2;max-width:620px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   background:#fff;border:1px solid var(--border);
@@ -111,13 +111,14 @@ nav.main-nav a:hover, nav.main-nav a.active{color:var(--terra)}
 }
 .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--terra)}
 .hero h1{
-  font-size:clamp(31px, 5.4vw, 54px);line-height:1.08;margin-bottom:22px;
+  font-size:clamp(31px, 5.4vw, 54px);line-height:1.08;margin-bottom:22px;color:#fff;
 }
-.hero h1 .accent{color:var(--terra)}
+.hero h1 .accent{color:#ffb27e}
 .hero p.lead{
-  font-size:clamp(16px,2vw,18.5px);color:var(--muted);line-height:1.6;
+  font-size:clamp(16px,2vw,18.5px);color:rgba(255,255,255,.9);line-height:1.6;
   max-width:480px;margin-bottom:32px;
 }
+.hero .trust-row{color:rgba(255,255,255,.85)}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
@@ -132,22 +133,10 @@ nav.main-nav a:hover, nav.main-nav a.active{color:var(--terra)}
 .trust-row span{display:flex;align-items:center;gap:7px}
 .trust-row svg{flex:none}
 
-.hero-visual{position:relative}
-.hero-card{
-  background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);
-  border:1px solid var(--border);
-}
-.hero-card img{width:100%;height:240px;object-fit:cover}
-.hero-card-body{padding:28px 28px 30px}
-.hero-card .hero-card-icon{
-  width:44px;height:44px;border-radius:13px;background:var(--bg-soft);
-  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-}
-.hero-card h3{font-size:19px;margin-bottom:10px}
-.hero-card p{font-size:14.5px;color:var(--muted);line-height:1.65;margin-bottom:20px}
-.hero-card-facts{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--border);padding-top:18px}
-.hero-fact{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;color:var(--ink)}
-.hero-fact svg{flex:none}
+/* ---------- Content photo (inne i tekst-seksjoner) ---------- */
+.content-photo{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);margin:8px 0 0}
+.content-photo img{width:100%;height:300px;object-fit:cover}
+.content-photo .cap{padding:12px 4px 0;font-size:13px;color:var(--muted)}
 
 /* ---------- Section shell ---------- */
 section{padding:84px 0}
@@ -298,8 +287,6 @@ footer{background:var(--terra-deep);color:rgba(255,255,255,.85);padding:60px 0 2
 
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-visual{order:-1}
   .bento-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -316,7 +303,8 @@ footer{background:var(--terra-deep);color:rgba(255,255,255,.85);padding:60px 0 2
   .footer-grid{grid-template-columns:1fr;gap:32px}
   .form-grid{grid-template-columns:1fr}
   section{padding:56px 0}
-  .hero{padding:40px 0 52px}
+  .hero{padding:90px 0 60px}
+  .hero-bg::after{background:linear-gradient(180deg, rgba(28,18,12,.55) 0%, rgba(28,18,12,.72) 55%, rgba(28,18,12,.92) 100%)}
   .quote-panel{padding:32px 22px}
   .form-card{padding:26px 20px}
 }
